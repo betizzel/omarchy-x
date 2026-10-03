@@ -585,4 +585,93 @@ html {
   & path[d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"] {
     fill: var(--omx-accent) !important;
   }
+
+  /* X Chat (/i/chat) and X's newer pages are Tailwind, styled by design tokens instead of
+     the classes above. Most hold bare HSL channels read as hsl(var(--token) / alpha), so they
+     get relative colors ("from <color> h s l"). !important beats X's :root[data-theme] rules. */
+  &,
+  & [data-theme],
+  & .dark-theme {
+    --color-gray-0: from var(--omx-surface) h s l !important;
+    --color-gray-50: from color-mix(in srgb, var(--omx-fg) 6%, var(--omx-surface)) h s l !important;
+    --color-gray-100: from color-mix(in srgb, var(--omx-fg) 12%, var(--omx-surface)) h s l !important;
+    --color-gray-200: from color-mix(in srgb, var(--omx-fg) 17%, var(--omx-surface)) h s l !important;
+    --color-gray-300: from color-mix(in srgb, var(--omx-fg) 22%, var(--omx-surface)) h s l !important;
+    --color-gray-400: from color-mix(in srgb, var(--omx-fg) 30%, var(--omx-surface)) h s l !important;
+    --color-gray-500: from color-mix(in srgb, var(--omx-fg) 38%, var(--omx-surface)) h s l !important;
+    --color-gray-600: from color-mix(in srgb, var(--omx-fg) 44%, var(--omx-surface)) h s l !important;
+    --color-gray-700: from var(--omx-muted) h s l !important;
+    --color-gray-800: from color-mix(in srgb, var(--omx-fg) 64%, var(--omx-surface)) h s l !important;
+    --color-gray-900: from color-mix(in srgb, var(--omx-fg) 78%, var(--omx-surface)) h s l !important;
+    --color-gray-1000: from color-mix(in srgb, var(--omx-fg) 90%, var(--omx-surface)) h s l !important;
+    --color-gray-1100: from var(--omx-fg) h s l !important;
+
+    --background: from var(--omx-bg) h s l !important;
+    --color-background: var(--background) !important;
+    --popover: var(--background) !important;
+    --color-modal-background: var(--color-gray-0) !important;
+    --foreground: from var(--omx-fg) h s l !important;
+    --color-text: var(--foreground) !important;
+    --card-foreground: var(--foreground) !important;
+    --popover-foreground: var(--foreground) !important;
+    --secondary-foreground: var(--foreground) !important;
+    --destructive-foreground: var(--foreground) !important;
+    --muted: var(--color-gray-100) !important;
+    --secondary: var(--color-gray-100) !important;
+    --border: var(--color-gray-100) !important;
+    --input: var(--color-gray-100) !important;
+    --muted-foreground: var(--color-gray-700) !important;
+    --color-nested-border: var(--color-gray-700) !important;
+    --color-brand: from var(--omx-accent) h s l !important;
+    --color-blue-500: var(--color-brand) !important;
+    --chat-accent: var(--color-brand) !important;
+    --ring: var(--color-brand) !important;
+    --color-brand-foreground: from var(--omx-on-accent) h s l !important;
+    --chat-accent-foreground: var(--color-brand-foreground) !important;
+    --destructive: from var(--omx-red) h s l !important;
+    --color-red-400: var(--destructive) !important;
+    --color-red-500: var(--destructive) !important;
+    --color-green-400: from var(--omx-green) h s l !important;
+    --color-green-500: var(--color-green-400) !important;
+    --color-yellow-400: from var(--omx-yellow) h s l !important;
+    --color-yellow-500: var(--color-yellow-400) !important;
+
+    /* plain-color tokens */
+    --x-bg-primary: var(--omx-bg) !important;
+    --x-bg-secondary: var(--omx-surface) !important;
+    --x-bg-tertiary: var(--omx-surface-2) !important;
+    --x-bg-modal: var(--omx-surface) !important;
+    --x-bg-sheets: var(--omx-surface) !important;
+    --x-bg-inputs: color-mix(in srgb, var(--omx-fg) 8%, transparent) !important;
+    --x-fg-primary: var(--omx-fg) !important;
+    --x-fg-secondary: var(--omx-muted) !important;
+    --x-fg-tertiary: color-mix(in srgb, var(--omx-fg) 30%, transparent) !important;
+    --x-fg-inverted: var(--omx-bg) !important;
+    --x-fg-on-color: var(--omx-on-accent) !important;
+    --x-fg-brand: var(--omx-accent) !important;
+    --x-fg-destructive: var(--omx-red) !important;
+    --x-fg-success: var(--omx-green) !important;
+    --x-fg-warning: var(--omx-yellow) !important;
+    --x-border-normal: var(--omx-surface) !important;
+    --x-border-hover: var(--omx-surface-2) !important;
+    --x-border-active: var(--omx-surface-3) !important;
+    --x-border-destructive: var(--omx-red) !important;
+    --x-btn-brand: var(--omx-accent) !important;
+    --x-btn-brand-hover: var(--omx-accent-hover) !important;
+    --x-btn-brand-pressed: var(--omx-accent-active) !important;
+    --x-btn-destructive: var(--omx-red) !important;
+    --x-btn-destructive-hover: var(--omx-red-hover) !important;
+    --x-btn-destructive-pressed: var(--omx-red-active) !important;
+    --x-hover-subtle: color-mix(in srgb, var(--omx-fg) 8%, transparent) !important;
+    --x-btn-ghost-hover: color-mix(in srgb, var(--omx-fg) 8%, transparent) !important;
+    --x-btn-ghost-pressed: color-mix(in srgb, var(--omx-fg) 15%, transparent) !important;
+  }
+
+  /* text on your own (accent) chat bubbles */
+  & .bg-chat-accent {
+    &.text-white,
+    & .text-white {
+      color: var(--omx-on-accent) !important;
+    }
+  }
 }
