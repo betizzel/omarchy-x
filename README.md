@@ -1,5 +1,7 @@
 # omarchy-x
 
+![xmarchy](./preview.png)
+
 Make X (x.com) look like the rest of your [Omarchy](https://omarchy.org) desktop. It uses your active theme's colors and monospace font, and it follows every `omarchy theme set` and `omarchy font set` automatically.
 
 Works in Omarchy's X web app and in normal tabs of any Chromium-based browser (Brave, Chromium, Chrome, Edge).
