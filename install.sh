@@ -39,4 +39,5 @@ Load it once in your Chromium-based browser:
   1. Open brave://extensions (or chrome://extensions)
   2. Enable Developer mode
   3. Load unpacked -> $EXT_DIR
+Already loaded? Click its reload icon there instead, then reload X.
 EOF
