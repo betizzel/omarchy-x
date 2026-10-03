@@ -26,9 +26,9 @@ Reload X. The theme switches X to its "Lights out" display mode and recolors it 
 | `x.css.tpl` | `~/.config/omarchy/themed/` | Omarchy renders it from `colors.toml` on every theme switch |
 | `sync.sh` | `~/.local/share/omarchy-x/` | Adds your monospace font, writes the extension's `theme.css` |
 | hooks | `~/.config/omarchy/hooks/{theme,font}-set.d/omarchy-x` | Run `sync.sh` after theme/font changes |
-| `extension/` | `~/.local/share/omarchy-x/` | Injects `theme.css` into x.com and refreshes it when the window regains focus |
+| `extension/` | `~/.local/share/omarchy-x/` | Injects `theme.css` into x.com and re-checks it every second while the page is visible |
 
-After a theme switch, click back into X to see the new colors. No reload is needed.
+After a theme switch, X picks up the new colors within about a second. No reload is needed.
 
 To change the look, edit `x.css.tpl` in the repo and re-run `install.sh`. Template tokens such as `{{ accent }}` and `{{ mix accent background 15% }}` are documented in Omarchy's theming docs.
 

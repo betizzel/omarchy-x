@@ -25,6 +25,20 @@ async function applyTheme() {
   style.textContent = css;
 }
 
-applyTheme();
-// Pick up `omarchy theme set` when the window regains focus, no reload needed.
-window.addEventListener("focus", applyTheme);
+// Switching themes from an Omarchy overlay need not blur the browser window, so
+// a focus listener can miss `omarchy theme set`. Re-check the (local, tiny) file
+// every second while the page is visible, and right away when it becomes visible.
+// The fetch fails once the extension is disabled or removed; stop checking then.
+const POLL_MS = 1000;
+const poll = setInterval(refresh, POLL_MS);
+document.addEventListener("visibilitychange", refresh);
+applyTheme().catch(stop);
+
+function refresh() {
+  if (!document.hidden) applyTheme().catch(stop);
+}
+
+function stop() {
+  clearInterval(poll);
+  document.removeEventListener("visibilitychange", refresh);
+}
