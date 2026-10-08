@@ -93,10 +93,38 @@ html {
     scrollbar-width: thin;
   }
 
-  /* backgrounds */
+  /* backgrounds (r-cl2sl0: newer modals like Drafts) */
   & [data-testid="primaryColumn"],
-  & .r-kemksi {
+  & .r-kemksi,
+  & .r-cl2sl0 {
     background-color: var(--omx-bg);
+  }
+
+  /* raised cards */
+  & .r-1xsd2s {
+    background-color: var(--omx-surface);
+  }
+
+  /* grey fills */
+  & .r-1shrkeu {
+    background-color: var(--omx-surface-3);
+  }
+
+  & .r-r7pcdh {
+    background-color: color-mix(in srgb, var(--omx-fg) 30%, var(--omx-surface));
+  }
+
+  /* translucent-white hovers, which vanish on light themes */
+  & .r-q773ft {
+    background-color: color-mix(in srgb, var(--omx-fg) 7%, transparent);
+  }
+
+  & .r-1fpi9eo {
+    background-color: color-mix(in srgb, var(--omx-fg) 12%, transparent);
+  }
+
+  & .r-1a7u7ko {
+    background-color: color-mix(in srgb, var(--omx-fg) 20%, transparent);
   }
 
   /* arrow on account switcher */
@@ -129,10 +157,28 @@ html {
     color: var(--omx-fg);
   }
 
+  & .r-1ion2gp,
+  & .r-1q89gc9 {
+    color: var(--omx-muted);
+  }
+
+  /* disabled text */
+  & .r-1otekoa,
+  & .r-165ghr7 {
+    color: color-mix(in srgb, var(--omx-fg) 35%, var(--omx-bg));
+  }
+
   /* borders */
   & .r-1kqtdi0,
-  & .r-1roi411 {
+  & .r-1roi411,
+  & .r-16cnnyw,
+  & .r-316qow,
+  & .r-1l9avrr {
     border-color: var(--omx-surface);
+  }
+
+  & .r-7jjzhb {
+    border-color: var(--omx-surface-2);
   }
 
   & .r-1igl3o0 {
